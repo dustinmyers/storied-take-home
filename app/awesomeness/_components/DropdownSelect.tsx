@@ -145,9 +145,9 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
                 tabIndex={0}
-                className={`cursor-pointer hover:bg-blue-700 p-2 ${
-                  focusedIndex === index ? 'bg-blue-700' : ''
-                }`}
+                className={`cursor-pointer hover:bg-blue-400 p-2 ${
+                  focusedIndex === index ? 'bg-blue-400' : ''
+                } ${selectedOption === option ? 'bg-blue-700 text-white' : ''}`}
               >
                 {option.label}
               </li>
