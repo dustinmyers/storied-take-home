@@ -1,11 +1,15 @@
 import { Dispatch, MouseEventHandler, SetStateAction, useState } from 'react';
 
-export const useToggle = (initialState: boolean = false): [boolean, () => void] => {
+export const useToggle = (initialState: boolean = false): [
+  boolean, 
+  (newState?: boolean) => void
+] => {
   const [state, setState] = useState<boolean>(initialState);
-  const toggle = () => setState((prevState) => !prevState);
+  const toggle = (newState: boolean | undefined) => {
+    setState((prevState) => typeof newState === 'boolean' ? newState : !prevState);
+  }
   return [state, toggle];
 };
-
 
 export const useFocusedIndex = (): {
   focusedIndex: number | null;

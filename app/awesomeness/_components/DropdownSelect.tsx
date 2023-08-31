@@ -34,7 +34,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   useOutsideClick(dropdownRef, () => {
-    toggleDropdown();
+    toggleDropdown(false);
     setFocusedIndex(null);
   });
 
