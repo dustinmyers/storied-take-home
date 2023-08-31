@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import DropdownSelect, { Option } from './DropdownSelect';
+import { useToggle } from '../../_hooks/useDropdown';
 
 const options = [
   { value: 'red', label: 'Red' },
@@ -13,6 +14,7 @@ const options = [
 ];
 
 const DropdownWrapper: React.FC = () => {
+  const [isOpen, toggleDropdown] = useToggle();
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = () => {
     setIsChecked((prevChecked) => !prevChecked);
@@ -56,6 +58,8 @@ const DropdownWrapper: React.FC = () => {
         options={options}
         onChange={handleChange}
         isSearchable={isChecked}
+        isOpen={isOpen}
+        toggleDropdown={toggleDropdown}
       />
     </div>
   );

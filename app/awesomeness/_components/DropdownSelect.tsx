@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, ChangeEvent } from 'react';
 import useOutsideClick from '../../_hooks/useOutsideClick';
-import { useFocusedIndex, useToggle } from '../../_hooks/useDropdown';
+import { useFocusedIndex } from '../../_hooks/useDropdown';
 import Image from 'next/image';
 
 export interface Option {
@@ -15,6 +15,8 @@ interface DropdownSelectProps {
   options: Option[];
   onChange: (value: Option) => void;
   isSearchable?: boolean;
+  isOpen: boolean;
+  toggleDropdown: (newState?: boolean | undefined) => void;
 }
 
 const DropdownSelect: React.FC<DropdownSelectProps> = ({
@@ -22,8 +24,9 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
   options,
   onChange,
   isSearchable,
+  isOpen, 
+  toggleDropdown
 }) => {
-  const [isOpen, toggleDropdown] = useToggle(false);
   const { focusedIndex, setFocusedIndex, handleMouseEnter, handleMouseLeave } = useFocusedIndex();
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
