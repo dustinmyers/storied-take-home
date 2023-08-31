@@ -137,7 +137,7 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
         </span>
       </button>
       {isOpen && (
-        <div className="absolute mt-2 py-2 border border-gray-300 rounded-lg shadow-lg w-48">
+        <div className="absolute mt-2 py-2 border border-gray-300 rounded-lg shadow-lg w-48 max-h-40 overflow-y-auto z-10">
           {isSearchable && (
             <input
               type="text"

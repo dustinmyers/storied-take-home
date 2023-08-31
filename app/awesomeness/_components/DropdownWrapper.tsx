@@ -5,8 +5,11 @@ import DropdownSelect, { Option } from './DropdownSelect';
 
 const options = [
   { value: 'red', label: 'Red' },
+  { value: 'orange', label: 'Orange' },
+  { value: 'yellow', label: 'Yellow' },
   { value: 'green', label: 'Green' },
   { value: 'blue', label: 'Blue' },
+  { value: 'purple', label: 'Purple' },
 ];
 
 const DropdownWrapper: React.FC = () => {
