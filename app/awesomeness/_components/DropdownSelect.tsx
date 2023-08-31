@@ -1,8 +1,8 @@
 'use client'
 
 import React, { useState, useRef, ChangeEvent } from 'react';
-import useOutsideClick from '@/app/_hooks/useOutsideClick';
-import { useFocusedIndex, useToggle } from '@/app/_hooks/useDropdown';
+import useOutsideClick from '../../_hooks/useOutsideClick';
+import { useFocusedIndex, useToggle } from '../../_hooks/useDropdown';
 import Image from 'next/image';
 
 export interface Option {

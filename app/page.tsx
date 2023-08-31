@@ -34,6 +34,7 @@ export default function Home() {
 
       <div className="flex items-center justify-center mb-32 lg:max-w-5xl w-full lg:mb-0">
         <Link href="/awesomeness" className="w-48 text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-300 dark:bg-gray-800 dark:hover:bg-green-700">
+          {/* eslint-disable-next-line react/no-unescaped-entities */}
           Let's Start  🚀
         </Link>
       </div>
