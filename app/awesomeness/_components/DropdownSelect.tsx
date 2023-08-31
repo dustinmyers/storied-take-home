@@ -3,6 +3,7 @@
 import React, { useState, useRef, ChangeEvent } from 'react';
 import useOutsideClick from '@/app/_hooks/useOutsideClick';
 import { useFocusedIndex, useToggle } from '@/app/_hooks/useDropdown';
+import Image from 'next/image';
 
 export interface Option {
   value: string;
@@ -119,11 +120,21 @@ const DropdownSelect: React.FC<DropdownSelectProps> = ({
       onKeyDown={handleTabKeyDown}
     >
       <button
-        onClick={toggleDropdown}
+        onClick={() => toggleDropdown()}
         onKeyDown={handleKeyDown}
-        className="w-48 border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:ring focus:border-blue-300"
+        className="
+          w-48 border border-gray-300 rounded-lg py-1 px-4 flex items-center justify-between 
+          focus:outline-none focus:ring focus:border-blue-300
+        "
       >
-        {selectedOption ? selectedOption.label : label}
+        <span>{selectedOption ? selectedOption.label : label}</span>
+        <span className="ml-2">
+          {isOpen ? (
+            <Image src="/CarrotUp.svg" alt="caret-up" width={24} height={24} className='fill-white mt-1'/>
+          ) : (
+            <Image src="/CarrotDown.svg" alt="caret-down" width={24} height={24} className='fill-white mb-1'/>
+          )}
+        </span>
       </button>
       {isOpen && (
         <div className="absolute mt-2 py-2 border border-gray-300 rounded-lg shadow-lg w-48">
